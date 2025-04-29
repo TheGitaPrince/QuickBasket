@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme{
+    --color-primary-100: #22c55e; 
+    --color-primary-200: #fb923c; 
+    --color-secondary-200: #0057B8;
+}
+
+body{
+    @apply bg-blue-100
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
