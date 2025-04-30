@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import AddToCart from "../components/addToCart.jsx"
+import AddToCart from "../components/AddToCart.jsx"
 
 function CardProducts({product}) {
 

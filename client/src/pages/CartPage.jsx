@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from "react-redux";
-import AddToCart from "../components/addToCart.jsx"
+import AddToCart from "../components/AddToCart.jsx"
 import { useNavigate } from "react-router-dom";
 import emptyCart from "../assets/pngwing.com.png";
 

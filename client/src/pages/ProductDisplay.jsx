@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProductDetails } from "../store/productSlice.js";
 import Loading from "../components/Loading.jsx";
 import { MdKeyboardArrowLeft, MdOutlineChevronRight } from "react-icons/md";
-import AddToCart from "../components/addToCart.jsx"
+import AddToCart from "../components/AddToCart.jsx"
 import { PiTimerBold } from "react-icons/pi";
 import delivery  from "../assets/delivery.png";
 import Prices_Offers  from "../assets/Prices_Offers.png";
