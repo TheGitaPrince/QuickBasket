@@ -4,7 +4,7 @@ import AddToCart from "../components/addToCart.jsx"
 import { useNavigate } from "react-router-dom";
 import emptyCart from "../assets/pngwing.com.png";
 
-function cartPage() {
+function CartPage() {
   const { cartItems } = useSelector((state) => state.cart);
   const navigate = useNavigate();
 
@@ -122,4 +122,4 @@ function cartPage() {
   )
 }
 
-export default cartPage
+export default CartPage
