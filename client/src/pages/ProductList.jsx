@@ -2,7 +2,7 @@ import React,{useEffect, useState} from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import { getProductByCategoryAndSubCategory } from "../store/productSlice.js";
-import { getSubCategories } from "../store/subCategorySlice.js"
+import { getSubCategories } from "../store/subCategoryslice.js"
 import CardProducts from "../components/CardProducts.jsx";
 import CardLoading from "../components/CardLoading.jsx";
 

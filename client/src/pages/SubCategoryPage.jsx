@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import UploadSubCategory from "../components/UploadSubCategory.jsx";
 import { useDispatch, useSelector } from "react-redux";
-import { getSubCategories } from "../store/subCategorySlice.js"
+import { getSubCategories } from "../store/subCategoryslice.js"
 import Loading from "../components/Loading.jsx";
 import EditSubCategory from "../components/EditSubCategory.jsx"
 import DeleteSubCategory from "../components/DeleteSubCategory.jsx"

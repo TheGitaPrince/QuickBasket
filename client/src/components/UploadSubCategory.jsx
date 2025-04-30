@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { createSubCategory, getSubCategories } from "../store/subCategorySlice.js"
+import { createSubCategory, getSubCategories } from "../store/subCategoryslice.js"
 import { getCategory } from "../store/categorySlice.js"
 import { IoClose } from "react-icons/io5";
 

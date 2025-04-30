@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useForm } from "react-hook-form";
 import { getProduct, updateProduct } from "../store/productSlice.js"
 import { getCategory } from "../store/categorySlice.js"
-import { getSubCategories } from "../store/subCategorySlice.js"
+import { getSubCategories } from "../store/subCategoryslice.js"
 import Loading from "../components/Loading.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { IoClose } from "react-icons/io5";

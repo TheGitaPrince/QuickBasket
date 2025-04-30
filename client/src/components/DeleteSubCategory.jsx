@@ -1,5 +1,5 @@
 import React from 'react'
-import { deleteSubCategory, getSubCategories } from "../store/subCategorySlice.js"
+import { deleteSubCategory, getSubCategories } from "../store/subCategoryslice.js"
 import { useDispatch, useSelector } from "react-redux";
 import { IoClose } from "react-icons/io5";
 

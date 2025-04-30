@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import desktopImage from "../assets/desktop.png";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategory } from "../store/categorySlice.js"
-import { getSubCategories } from "../store/subCategorySlice.js"
+import { getSubCategories } from "../store/subCategoryslice.js"
 import Loading from "../components/Loading.jsx";
 import CategoryProduct from "../components/CategoryProduct.jsx"
 import { useNavigate } from "react-router-dom";
