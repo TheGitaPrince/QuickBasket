@@ -57,8 +57,8 @@ function ProductList() {
             })}
         </div>
         <div className="bg-white col-span-8 overflow-y-auto no-scrollbar md:rounded-t-md h-full">
-          <h2 className="text-lg font-semibold mb-2 capitalize md:shadow md:pl-3 py-2">{correctSubCategoryName}</h2>
-          <div className="flex flex-wrap flex-row md:gap-4 gap-2 md:p-3 items-center justify-center ">
+          <h2 className="text-lg font-semibold md:mb-2 capitalize md:shadow md:pl-3 md:py-2 py-1 px-2">{correctSubCategoryName}</h2>
+          <div className="flex flex-wrap flex-row gap-4 md:p-3 items-center justify-center ">
             {loading 
               ? loadingCard.map((_, index) => <CardLoading key={index} />)
               : productsBySubCategory.map((product) => (
