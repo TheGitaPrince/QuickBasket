@@ -29,6 +29,11 @@ if (process.env.NODE_ENV === "development") {
     app.use(morgan("combined"));
 }
 
+app.get("/", (req, res) => {
+    res.send("API is running...");
+  });
+
+
 import userRouter from "./routes/user.routes.js"
 import categoryRouter from "./routes/category.routes.js"
 import subCategoryRouter from "./routes/subCategory.routes.js"
