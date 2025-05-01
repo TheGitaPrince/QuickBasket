@@ -36,30 +36,29 @@ function ProductList() {
 
   return (
     <section className="bg-blue-50 md:pt-5 md:px-4 md:h-[76vh] h-[71vh] ">
-      <div className="grid md:grid-cols-10 h-full">
-      <h2 className="text-lg font-semibold md:p-2 px-5 py-2  flex md:hidden bg-white">Sub Categories</h2>
-      <div className="md:col-span-2 bg-white md:rounded-t-md md:h-full md:px-6 md:mr-3 flex md:flex-col flex-row overflow-x-auto md:overflow-y-auto no-scrollbar md:p-2 gap-2">
-          <h2 className="text-lg font-semibold md:mb-2 p-2 hidden md:flex">Sub Categories</h2>
-          {filterSubCategories.map((sub, index) => { 
-          const cleanName = sub.categoryId[0]?.name?.toString().replaceAll(",","-").replaceAll("&","-").replaceAll(" ","-");
-          const cleanSubName = sub.name.toString().replaceAll(",","-").replaceAll("&","-").replaceAll(" ","-")
-          const url = `/${cleanName}-${categoryId}/${cleanSubName}-${sub._id}`;
-          return (
+      <div className="grid grid-cols-10 h-full">
+        <div className="col-span-2 bg-white md:rounded-t-md md:px-6 px-3  py-3 md:mr-3 flex flex-col overflow-y-auto no-scrollbar gap-2 h-full">
+          <h2 className="text-lg font-semibold p-2 md:flex hidden">Sub Categories</h2>
+            {filterSubCategories.map((sub, index) => { 
+            const cleanName = sub.categoryId[0]?.name?.toString().replaceAll(",","-").replaceAll("&","-").replaceAll(" ","-");
+            const cleanSubName = sub.name.toString().replaceAll(",","-").replaceAll("&","-").replaceAll(" ","-")
+            const url = `/${cleanName}-${categoryId}/${cleanSubName}-${sub._id}`;
+            return (
             <Link
               key={index}
               to={url}
-              className={`shrink-0 md:h-16 h-18 flex md:flex-row items-center cursor-pointer p-2 hover:bg-gray-100 rounded ${subCategoryId === sub._id ? "bg-gray-200" : ""}`}>
+              className={`flex md:flex-row flex-col items-center p-2 shadow cursor-pointer hover:bg-gray-100 rounded ${subCategoryId === sub._id ? "bg-gray-200" : ""}`}>
               <div className="w-12 h-12">
                 <img className="w-full h-full object-contain" src={sub.image} alt={sub.name} />
               </div>
-              <h2 className="text-sm">{sub.name}</h2>
+              <h2 className="text-xs text-ellipsis">{sub.name}</h2>
             </Link>
-          );
-          })}
+            );
+            })}
         </div>
-        <div className="bg-white md:col-span-8 md:overflow-y-auto overflow-x-auto no-scrollbar rounded-t-md h-full">
-          <h2 className="text-lg font-semibold md:mb-4 ml-3 md:ml-0 capitalize md:shadow pl-3 py-2">{correctSubCategoryName}</h2>
-          <div className="flex md:flex-wrap flex-row gap-4 p-3 md:items-center md:justify-center ">
+        <div className="bg-white col-span-8 overflow-y-auto no-scrollbar md:rounded-t-md h-full">
+          <h2 className="text-lg font-semibold mb-2 capitalize md:shadow md:pl-3 py-2">{correctSubCategoryName}</h2>
+          <div className="flex flex-wrap flex-row md:gap-4 gap-2 md:p-3 items-center justify-center ">
             {loading 
               ? loadingCard.map((_, index) => <CardLoading key={index} />)
               : productsBySubCategory.map((product) => (
