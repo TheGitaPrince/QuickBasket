@@ -46,7 +46,7 @@ function SearchPage() {
   };
 
   return (
-    <section className="overflow-y-auto no-scrollbar py-4 bg-white">
+    <section className="overflow-y-auto no-scrollbar py-4 bg-white md:min-h-[76vh] min-h-[71vh]">
       <div className="flex flex-wrap justify-center md:gap-8 gap-3">
         {
           loading?(
