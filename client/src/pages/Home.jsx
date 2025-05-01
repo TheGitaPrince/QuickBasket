@@ -33,7 +33,7 @@ function Home() {
 
 
   return (
-    <section className="bg-white md:min-h-[76vh] min-h-[71vh] md:py-5 py-2 md:px-4 px-2">
+    <section className="bg-white md:min-h-[76vh] min-h-[71vh] md:py-5 md:px-4">
         <div className="hidden md:block">
             <img src={desktopImage} alt="" />
         </div>
@@ -45,10 +45,10 @@ function Home() {
            <Loading/>
          </div>
         ) : (
-        <div className="flex flex-wrap items-center justify-center gap-2 mt-3">
+        <div className="flex flex-wrap items-center justify-center gap-1 md:mt-2">
           {categories && categories.length > 0? 
           (categories.map((category) => (
-            <div key={category._id} onClick={() => redirectProductListPage(category._id,category.name)} className="w-20 md:w-31 md:h-40 h-30 py-2  rounded-lg shadow hover:cursor-pointer ">
+            <div key={category._id} onClick={() => redirectProductListPage(category._id,category.name)} className="w-20 md:w-31 md:h-40 h-30 rounded-lg shadow hover:cursor-pointer">
                  <img
                    src={category.image}
                    alt={category.name}

@@ -41,7 +41,7 @@ function CategoryProduct({id,name}) {
 
 
   return (
-    <div className="py-2">
+    <div className="py-2 px-1">
        <div className="flex items-center justify-between font-semibold text-lg md:xl">
           <p className="">{name}</p>
           <Link onClick={redirectProductListPage} className="text-green-700 hover:text-green-600">See All</Link>
