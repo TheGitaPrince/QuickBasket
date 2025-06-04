@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 function Home() {
   const { categories, isLoading} = useSelector((state) => state.category);
   const { subCategories } = useSelector((state) => state.subCategory);
-  const {products, loading} = useSelector((state)=>state.product)
+  const { productsByCategory } = useSelector((state)=>state.product)
   const dispatch = useDispatch()
   const navigate = useNavigate();
 
@@ -31,6 +31,9 @@ function Home() {
      }
   }
 
+  const filteredCategories = categories?.filter(
+    (category) => productsByCategory[category._id]?.length > 0
+  );   
 
   return (
     <section className="bg-white md:min-h-[76vh] min-h-[71vh] md:py-5 md:px-4">
@@ -59,8 +62,8 @@ function Home() {
         </div>
         )}
         {
-          categories && categories.length > 0 && (
-            categories.map((category)=>( <CategoryProduct key={category._id} id={category._id} name={category.name}/>))
+          filteredCategories && filteredCategories.length > 0 && (
+            filteredCategories.map((category)=>( <CategoryProduct key={category._id} id={category._id} name={category.name}/>))
           )
         }
     </section>
