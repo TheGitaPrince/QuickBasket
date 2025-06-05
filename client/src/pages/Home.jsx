@@ -3,6 +3,7 @@ import desktopImage from "../assets/desktop.png";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategory } from "../store/categorySlice.js"
 import { getSubCategories } from "../store/subCategoryslice.js"
+import { getProductByCategory } from "../store/productSlice.js";
 import Loading from "../components/Loading.jsx";
 import CategoryProduct from "../components/CategoryProduct.jsx"
 import { useNavigate } from "react-router-dom";
@@ -19,6 +20,14 @@ function Home() {
     dispatch(getCategory());
     dispatch(getSubCategories());
    }, [dispatch]);
+
+  useEffect(() => {
+    if (categories && categories.length > 0) {
+       categories.forEach((category) => {
+          dispatch(getProductByCategory(category._id));
+       });
+    }
+  }, [categories, dispatch]);
 
   const redirectProductListPage =(_id,name)=>{
      const subCategory = subCategories.find((sub)=>(sub.categoryId.some((cat)=>cat._id === _id))) 
