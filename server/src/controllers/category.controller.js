@@ -21,7 +21,7 @@ const createCategory = asyncHandler(async (req,res) => {
         throw new ApiError(400, "Category with this name already exists.");
     }
 
-    const imageLocalPath =  req.file?.path
+    const imageLocalPath =  req.file
 
     if(!imageLocalPath){
         throw new ApiError(400, "Category image is required.");    
@@ -71,7 +71,7 @@ const updateCategory = asyncHandler(async (req,res) => {
     }
     
     if (req.file) {
-        const imageLocalPath = req.file.path;
+        const imageLocalPath = req.file
         
         const imageUrl = await uploadOnCloudinary(imageLocalPath);
 

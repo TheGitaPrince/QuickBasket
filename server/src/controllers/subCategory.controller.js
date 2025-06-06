@@ -27,7 +27,7 @@ const createSubCategory = asyncHandler(async (req,res) => {
         throw new ApiError(400, "Parent category not found.");
     }
 
-    const imageLocalPath =  req.file?.path
+    const imageLocalPath =  req.file
 
     if(!imageLocalPath){
         throw new ApiError(400, "Sub-category image is required.");    
@@ -90,7 +90,7 @@ const updateSubCategory = asyncHandler(async (req,res) => {
         subCategory.categoryId = categoryId;
     }
 
-    const imageLocalPath =  req.file?.path
+    const imageLocalPath =  req.file
 
     // if(!imageLocalPath){
     //     throw new ApiError(400, "Sub-category image is required.");    

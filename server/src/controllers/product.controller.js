@@ -56,7 +56,7 @@ const createProduct = asyncHandler(async (req,res) => {
     let imageUrls = []
        
     if(req.files && req.files.image && req.files.image.length > 0){
-        const uploadPromise = req.files.image.map((file)=> uploadOnCloudinary(file.path))
+        const uploadPromise = req.files.image.map((file)=> uploadOnCloudinary(file))
         const uploadedImages = await Promise.all(uploadPromise)
 
         imageUrls = uploadedImages
@@ -211,7 +211,7 @@ const updateProduct = asyncHandler(async (req,res) => {
     let imageUrls = product.image;
 
     if(req.files && req.files.image && req.files.image.length > 0){
-        const uploadPromise = req.files.image.map((file)=> uploadOnCloudinary(file.path))
+        const uploadPromise = req.files.image.map((file)=> uploadOnCloudinary(file))
         const uploadedImages = await Promise.all(uploadPromise)
 
         const newImageUrls = uploadedImages
