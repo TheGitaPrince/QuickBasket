@@ -164,7 +164,7 @@ const logoutUser = asyncHandler(async (req,res) => {
 })
 
 const uploadAvatar = asyncHandler(async (req,res) => {
-    const avatarLocalPath =  req.file?.path
+    const avatarLocalPath =  req.file
 
     if(!avatarLocalPath){
         throw new ApiError(400, "Avatar file is missing")
@@ -464,7 +464,6 @@ const getAdminRequests = asyncHandler( async (req, res) => {
 
     return res.status(200).json(new ApiResponse(200, adminRequestList, "Fetched admin access requests"));
 });
-
 
 export { 
     registerUser,
