@@ -208,8 +208,6 @@ const updateProduct = asyncHandler(async (req,res) => {
         throw new ApiError(400, "Sub Category does not exist.");
     }
 
-    let imageUrls = product.image;
-
     if(req.files && req.files.image && req.files.image.length > 0){
         const uploadPromise = req.files.image.map((file)=> uploadOnCloudinary(file))
         const uploadedImages = await Promise.all(uploadPromise)
@@ -218,7 +216,7 @@ const updateProduct = asyncHandler(async (req,res) => {
                     .filter((img)=>img?.secure_url)
                     .map((img) => img.secure_url)
 
-        if (newImageUrls.length === 0) {
+        if (newImageUrls.length === 0 && req.files.image.length > 0) {
             throw new ApiError(500, "Image upload failed.");
         }
         
@@ -235,7 +233,6 @@ const updateProduct = asyncHandler(async (req,res) => {
     product.description = description;
     product.more_details = parsedMoreDetails;
     product.publish = publish;
-    product.image = imageUrls;
 
     await product.save();
 
