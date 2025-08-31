@@ -2,6 +2,28 @@
 
 A modern E-Commerce platform to browse, shop and manage daily essentials, groceries, and household items.
 
+--- 
+
+🌐 **Live Website:** [https://quick-basket-dug9.vercel.app](https://quick-basket-dug9.vercel.app)
+
+## Screenshot
+
+Here is the home page screenshot of the QuickBasket website:
+
+![Home Page Screenshot](https://mycdn.com/images/home.png)
+
+---
+## Demo Video
+
+Watch the demo video below to see the QuickBasket in action:
+
+<video width="600" controls>
+  <source src="https://1drv.ms/v/c/e35d992d33453a8d/ESmIh9NiqNpEijrTFu1xX3UBSnpNidi6QxshN7WF-E4rQA?e=vMuqNP" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+---
+
 ### 🖥️ Frontend Features
 
 - User Registration & Login (with Token-based Authentication)
@@ -78,10 +100,6 @@ A modern E-Commerce platform to browse, shop and manage daily essentials, grocer
 ## 👨‍💻 Author
 
 **Prince Kumar Singh**
-
----
-
-🌐 **Live Website:** [https://quick-basket-dug9.vercel.app](https://quick-basket-dug9.vercel.app)
 
 ---
 
