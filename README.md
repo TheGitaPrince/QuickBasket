@@ -10,7 +10,7 @@ A modern E-Commerce platform to browse, shop and manage daily essentials, grocer
 
 Here is the home page screenshot of the QuickBasket website:
 
-![Home Page Screenshot](client/public/home.png)
+![Home Page Screenshot](https://mycdn.com/images/home.png)
 
 ---
 ## Demo Video
