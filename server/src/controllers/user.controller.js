@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import { UserModel } from "../models/user.model.js";
-import { AdminRequestModel } from "../models/adminRequest.model.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
@@ -402,12 +401,19 @@ const refreshAccessToken = asyncHandler(async (req,res, next) => {
 const requestAdminAccess = asyncHandler(async (req, res) => {
     const userId = req.user?._id;
 
-    const existingRequest = await AdminRequestModel.findOne({ user: userId });
-    if (existingRequest) {
-        throw new ApiError(400, "Request already submitted");
+    const user = await UserModel.findById(userId);
+    if (!user) {
+       throw new ApiError(404, "User not found");
     }
 
-    await AdminRequestModel.create({ user: userId });
+    if (user.adminRequestPending) {
+       throw new ApiError(400, "Request already submitted");
+    } 
+
+    user.adminRequestPending = true;
+    user.adminRequestDate = new Date();
+
+    await user.save();
 
     return res.status(200).json(new ApiResponse(200, null, "Admin access request submitted"));
 });
@@ -416,29 +422,30 @@ const approveAdminAccess = asyncHandler(async (req, res) => {
     const { email } = req.body;
 
     if (!email) {
-        throw new ApiError(400, "Target user's email is required");
+        throw new ApiError(400, "User's email is required");
     }
 
     const adminUser = req.user;
     if (adminUser.role !== "ADMIN") {
-        throw new ApiError(403, "Only admins can approve admin requests");
+        throw new ApiError(400, "Only admins can approve admin requests");
     }
 
     const user = await UserModel.findOne({ email });
     if (!user) {
-        throw new ApiError(404, "User not found");
+        throw new ApiError(400, "User not found");
     }
 
     if (user.role === "ADMIN") {
         throw new ApiError(400, "User is already an admin");
     }
 
-    const request = await AdminRequestModel.findOne({ user: user._id });
-    if (!request) {
-        throw new ApiError(400, "No admin request found for this user");
+    if (!user.adminRequestPending) {
+       throw new ApiError(400, "No admin request found for this user");
     }
 
     user.role = "ADMIN";
+    user.adminRequestPending = false;
+    user.adminRequestDate = null;
     await user.save();
 
     await request.deleteOne();
@@ -460,7 +467,7 @@ const getAdminRequests = asyncHandler( async (req, res) => {
     if (adminUser.role !== "ADMIN") {
         throw new ApiError(403, "Only admins can view admin access requests");
     }
-    const adminRequestList = await AdminRequestModel.find().populate("user", "name email");
+    const adminRequestList = await UserModel.find({ adminRequestPending: true }).populate("name email");
 
     return res.status(200).json(new ApiResponse(200, adminRequestList, "Fetched admin access requests"));
 });

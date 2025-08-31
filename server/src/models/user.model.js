@@ -78,8 +78,15 @@ const userSchema = new Schema({
         type: String,
         enum:["ADMIN","USER"],
         default:"USER"
+    },
+        adminRequestPending: {
+        type: Boolean,
+        default: false
+    },
+        adminRequestDate: {
+        type: Date,
+        default: null
     }
-
 },{ timestamps: true})
 
 

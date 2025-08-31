@@ -57,7 +57,7 @@ function Home() {
            <Loading/>
          </div>
         ) : (
-        <div className="flex flex-wrap items-center justify-center gap-1 md:mt-2">
+        <div className="flex flex-wrap items-center justify-center gap-5 md:mt-2">
           {categories && categories.length > 0? 
           (categories.map((category) => (
             <div key={category._id} onClick={() => redirectProductListPage(category._id,category.name)} className="w-20 md:w-31 md:h-40 h-30 rounded-lg shadow hover:cursor-pointer">
