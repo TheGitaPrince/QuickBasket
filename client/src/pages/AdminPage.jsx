@@ -31,12 +31,12 @@ function AdminPage() {
               className="bg-white shadow p-3 rounded flex justify-between items-center"
             >
               <div>
-                <h3 className="font-medium text-gray-800">{req.user.name}</h3>
-                <p className="text-sm text-gray-600">{req.user.email}</p>
+                <h3 className="font-medium text-gray-800">{req.name}</h3>
+                <p className="text-sm text-gray-600">{req.email}</p>
               </div>
               {user?.role === "ADMIN" && (
                 <button
-                  onClick={() => handleApprove(req.user.email)}
+                  onClick={() => handleApprove(req.email)}
                   className="bg-green-600 text-white text-sm px-3 py-1 rounded hover:bg-green-700 cursor-pointer"
                 >
                   Approve

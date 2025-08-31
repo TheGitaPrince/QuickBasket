@@ -164,7 +164,7 @@ function ProductDisplay() {
                  <h2 className="">{formatDescription(description)}</h2>
               </div>
           </div>
-          <div className="flex flex-col mt-5 space-y-2"> 
+          <div className="flex flex-col mt-5 md:space-y-8 space-y-5 mb-2"> 
              <h2 className="mb-3">Why shop from QuickBasket?</h2>
              <div className="flex flex-row items-center gap-5">
                 <div className="h-15 w-15">
