@@ -17,10 +17,10 @@ Here is the home page screenshot of the QuickBasket website:
 
 Watch the demo video below to see the QuickBasket in action:
 
-<video width="600" controls>
-  <source src="https://1drv.ms/v/c/e35d992d33453a8d/ESmIh9NiqNpEijrTFu1xX3UBSnpNidi6QxshN7WF-E4rQA?e=vMuqNP" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+> **Note:** Direct video embedding via OneDrive links is not supported in GitHub README.  
+> Please click the link below to watch the demo video externally.
+
+[Watch Demo Video on OneDrive](https://1drv.ms/v/c/e35d992d33453a8d/ESmIh9NiqNpEijrTFu1xX3UBSnpNidi6QxshN7WF-E4rQA?e=vMuqNP)
 
 ---
 
