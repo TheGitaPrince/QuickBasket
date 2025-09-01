@@ -20,7 +20,7 @@ Watch the demo video below to see the QuickBasket in action:
 > **Note:** Direct video embedding via OneDrive links is not supported in GitHub README.  
 > Please click the link below to watch the demo video externally.
 
-[Watch Demo Video on OneDrive](https://1drv.ms/v/c/e35d992d33453a8d/ESmIh9NiqNpEijrTFu1xX3UBSnpNidi6QxshN7WF-E4rQA?e=vMuqNP)
+[Watch Demo Video on OneDrive](https://www.canva.com/design/DAGxwBpOsvU/WT_JKWU2MpLfMsUwN_i_zg/watch?utm_content=DAGxwBpOsvU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h991be58b2e)
 
 ---
 
